@@ -91,7 +91,18 @@
             <option value="5">Strongly Agree</option>
         </select>
         <br>
-        <button type="submit">Find me a friend!</button>
+        <button type="submit" id="submit" class="btn btn-primary submit">Find me a friend!</button>
     </div>
 </body>
+<script type="text/javascript">
+function sendResults() {
+$("#submit").on("click", function() {
+    $.ajax({
+        url: "/api/friends",
+        method: "POST"
+    });
+});
+}
+
+</script>
 </html>
